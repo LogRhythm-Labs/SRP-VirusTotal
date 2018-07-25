@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="Contextual VirusTotal Query" Guid="ada5d509-2aec-416f-aff4-247954b46947" Version="1" IsLogRhythmPlugin="true">
+  <remv1:Action Name="VirusTotal : Scan File" Command="lrvt.exe">
+    <remv1:ConstantParameter Name="Script" Switch="--scan-file" Order="1" />
+    <remv1:StringParameter Name="File Path/Name" Switch="" Order="2">
+      <remv1:DefaultInput>
+        <remv1:Object />
+      </remv1:DefaultInput>
+    </remv1:StringParameter>
+    <remv1:EncryptedParameter>
+      <remv1:StringParameter Name="VirusTotal API Key" Switch="" Order="3" />
+    </remv1:EncryptedParameter>
+  </remv1:Action>
+  <remv1:Action Name="VirusTotal : Scan URL" Command="lrvt.exe">
+    <remv1:ConstantParameter Name="Script" Switch="--scan-url" Order="1" />
+    <remv1:StringParameter Name="URI/URL" Switch="" Order="2">
+      <remv1:DefaultInput>
+        <remv1:URL />
+      </remv1:DefaultInput>
+    </remv1:StringParameter>
+    <remv1:EncryptedParameter>
+      <remv1:StringParameter Name="VirusTotal API Key" Switch="" Order="3" />
+    </remv1:EncryptedParameter>
+  </remv1:Action>
+</remv1:Remediation-Plugin>
